@@ -4,12 +4,17 @@
  * and open the template in the editor.
  */
 package visao;
+import modelo.Calculadora;
 
 /**
  *
  * @author PC
  */
 public class Teste extends javax.swing.JFrame {
+    
+    float num1, num2;
+    String sinal;
+    float resultado;
 
     /**
      * Creates new form Teste
@@ -52,7 +57,7 @@ public class Teste extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txDisplay.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        txDisplay.setFont(new java.awt.Font("Cambria Math", 0, 24)); // NOI18N
         txDisplay.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -82,54 +87,134 @@ public class Teste extends javax.swing.JFrame {
 
         btUm.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btUm.setText("1");
+        btUm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btUmActionPerformed(evt);
+            }
+        });
 
         btDois.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btDois.setText("2");
+        btDois.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDoisActionPerformed(evt);
+            }
+        });
 
         btTres.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btTres.setText("3");
+        btTres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btTresActionPerformed(evt);
+            }
+        });
 
         btQuatro.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btQuatro.setText("4");
+        btQuatro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btQuatroActionPerformed(evt);
+            }
+        });
 
         btCinco.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btCinco.setText("5");
+        btCinco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCincoActionPerformed(evt);
+            }
+        });
 
         btSeis.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btSeis.setText("6");
+        btSeis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSeisActionPerformed(evt);
+            }
+        });
 
         btSete.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btSete.setText("7");
+        btSete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSeteActionPerformed(evt);
+            }
+        });
 
         btOito.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btOito.setText("8");
+        btOito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btOitoActionPerformed(evt);
+            }
+        });
 
         btNove.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btNove.setText("9");
+        btNove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNoveActionPerformed(evt);
+            }
+        });
 
         btPonto.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btPonto.setText(".");
 
         btMenos.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btMenos.setText("-");
+        btMenos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMenosActionPerformed(evt);
+            }
+        });
 
         btMais.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btMais.setText("+");
+        btMais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMaisActionPerformed(evt);
+            }
+        });
 
         btDivisao.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btDivisao.setText("/");
+        btDivisao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDivisaoActionPerformed(evt);
+            }
+        });
 
         btMulti.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btMulti.setText("*");
+        btMulti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMultiActionPerformed(evt);
+            }
+        });
 
         btCe.setFont(new java.awt.Font("Cambria Math", 0, 11)); // NOI18N
         btCe.setText("CE");
+        btCe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCeActionPerformed(evt);
+            }
+        });
 
         btC.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btC.setText("C");
+        btC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCActionPerformed(evt);
+            }
+        });
 
         btIgual.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         btIgual.setText("=");
+        btIgual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btIgualActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -258,9 +343,106 @@ public class Teste extends javax.swing.JFrame {
 
     private void btZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btZeroActionPerformed
         // TODO add your handling code here:
-        txDisplay.setText("0");
+        txDisplay.setText(txDisplay.getText()+"0");
         
     }//GEN-LAST:event_btZeroActionPerformed
+
+    private void btUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUmActionPerformed
+        // TODO add your handling code here:
+        txDisplay.setText(txDisplay.getText()+"1");
+    }//GEN-LAST:event_btUmActionPerformed
+
+    private void btDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDoisActionPerformed
+        // TODO add your handling code here:
+        txDisplay.setText(txDisplay.getText()+"2");
+    }//GEN-LAST:event_btDoisActionPerformed
+
+    private void btTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTresActionPerformed
+        // TODO add your handling code here:
+        txDisplay.setText(txDisplay.getText()+"3");
+    }//GEN-LAST:event_btTresActionPerformed
+
+    private void btQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btQuatroActionPerformed
+        // TODO add your handling code here:
+        txDisplay.setText(txDisplay.getText()+"4");
+    }//GEN-LAST:event_btQuatroActionPerformed
+
+    private void btCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCincoActionPerformed
+        // TODO add your handling code here:
+        txDisplay.setText(txDisplay.getText()+"5");
+    }//GEN-LAST:event_btCincoActionPerformed
+
+    private void btSeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSeisActionPerformed
+        // TODO add your handling code here:
+        txDisplay.setText(txDisplay.getText()+"6");
+    }//GEN-LAST:event_btSeisActionPerformed
+
+    private void btSeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSeteActionPerformed
+        // TODO add your handling code here:
+        txDisplay.setText(txDisplay.getText()+"7");
+    }//GEN-LAST:event_btSeteActionPerformed
+
+    private void btOitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOitoActionPerformed
+        // TODO add your handling code here:
+        txDisplay.setText(txDisplay.getText()+"8");
+    }//GEN-LAST:event_btOitoActionPerformed
+
+    private void btNoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNoveActionPerformed
+        // TODO add your handling code here:
+        txDisplay.setText(txDisplay.getText()+"9");
+    }//GEN-LAST:event_btNoveActionPerformed
+
+    private void btDivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDivisaoActionPerformed
+        // TODO add your handling code here:
+        num1 = Float.parseFloat(txDisplay.getText());
+        txDisplay.setText("");
+        sinal = "dividir";
+    }//GEN-LAST:event_btDivisaoActionPerformed
+
+    private void btMultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMultiActionPerformed
+        // TODO add your handling code here:
+        num1 = Float.parseFloat(txDisplay.getText());
+        txDisplay.setText("");
+        sinal = "multiplicar";
+    }//GEN-LAST:event_btMultiActionPerformed
+
+    private void btMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMenosActionPerformed
+        // TODO add your handling code here:
+        num1 = Float.parseFloat(txDisplay.getText());
+        txDisplay.setText("");
+        sinal = "subtrair";
+    }//GEN-LAST:event_btMenosActionPerformed
+
+    private void btMaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMaisActionPerformed
+        // TODO add your handling code here:
+        num1 = Float.parseFloat(txDisplay.getText());
+        txDisplay.setText("");
+        sinal = "somar";
+    }//GEN-LAST:event_btMaisActionPerformed
+
+    private void btIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btIgualActionPerformed
+        // TODO add your handling code here:
+        num2 = Float.parseFloat(txDisplay.getText());
+        
+        Calculadora conta = new Calculadora(num1, num2, sinal);
+        
+        resultado = conta.Calcular();
+        
+        txDisplay.setText(Float.toString(resultado));        
+    }//GEN-LAST:event_btIgualActionPerformed
+
+    private void btCeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCeActionPerformed
+        // TODO add your handling code here:
+        txDisplay.setText("");
+    }//GEN-LAST:event_btCeActionPerformed
+
+    private void btCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCActionPerformed
+        // TODO add your handling code here:
+        num1 = 0;
+        num2 = 0;
+        sinal = "";
+        txDisplay.setText("");
+    }//GEN-LAST:event_btCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -321,4 +503,6 @@ public class Teste extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField txDisplay;
     // End of variables declaration//GEN-END:variables
+    
+    
 }
